@@ -42,7 +42,10 @@ class BoundaryEventPlugin {
   // 判断此节点是否在某个节点的边界上
   // 如果在，且这个节点model存在属性isTaskNode，则调用这个方法
   private checkAppendBoundaryEvent = ({ data }) => {
-    const { x, y, id } = data;
+    const { x, y, id, properties } = data;
+    if (!properties.isBoundaryEvent) {
+      return
+    }
     const { nodes } = this.lf.graphModel;
     let closeNodeId = '';
     for (let i = 0; i < nodes.length; i++) {
