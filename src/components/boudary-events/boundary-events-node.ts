@@ -17,6 +17,7 @@ class BoundaryEventModel extends CircleNodeModel {
     super.initNodeData(data)
     this.r = 20
     this.properties.isBoundaryEvent = true
+    this.autoToFront = false // 不自动设置到最顶部，而是使用自己的zIndex
     this.zIndex = 99999 // 保证边界事件节点用于在最上方
   }
 }
@@ -60,9 +61,9 @@ class BoundaryEvent extends CircleNode {
   }
   // 重写toFront为空来防止边界事件层级因为交互而改变
   // 改变节点在实现选中状态后被重置为初始化层级的问题
-  toFront () {
-    console.log(333)
-  }
+  // toFront () {
+  //   console.log(333)
+  // }
 }
 
 export default {

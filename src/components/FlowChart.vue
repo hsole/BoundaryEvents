@@ -21,7 +21,6 @@ export default {
       width: 1200,
       height: 600,
       grid: false,
-      edgeType: 'bezier',
       // keyboard: true,
       plugins: [
         DndPanel,
@@ -29,7 +28,7 @@ export default {
       ]
     })
     lf.setTheme({
-      bezier: {
+      polyline: {
         stroke: 'rgb(130, 179, 102)',
         strokeWidth: 1,
       }
